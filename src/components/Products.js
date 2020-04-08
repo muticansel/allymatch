@@ -44,7 +44,6 @@ const Products = props => {
                                 <DroddownComp text="Select Sub Category" bgColor="#2B0775" cardColor={"#E2D9F4"}>
                                     <SubCategories product={product} color={"#E2D9F4"} />
                                 </DroddownComp>
-                                {/* {(subCatBtn) && <SubCategories product={product} color={"#E2D9F4"} />} */}
                             </View>
                         }
                     </View>

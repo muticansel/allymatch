@@ -1,12 +1,12 @@
 export default {
     products: [
         {
-            id: "automaticControlEngineering",
+            id: "automaticcontrolengineering",
             value: "Automatic Control engineering",
             checked: false
         },
         {
-            id: "communicationEquipment",
+            id: "communicationequipment",
             value: "Communication equipment",
             checked: false
         },
@@ -14,50 +14,6 @@ export default {
             id: "electricmotors",
             value: "Electric motors",
             checked: false,
-        //     subCategories: [
-        //         {
-        //             id: "bearings",
-        //             value: "Bearings",
-        //             checked: false,
-        //             subProducts: [
-        //                 {
-        //                     id: "blueCollector",
-        //                     value: "Blue Collector",
-        //                     checked: false,
-        //                 },
-        //                 {
-        //                     id: "yellowCollector",
-        //                     value: "Yellow Collector",
-        //                     checked: false,
-        //                 },
-        //                 {
-        //                     id: "blackCollector",
-        //                     value: "Black Collector",
-        //                     checked: false,
-        //                 },
-        //                 {
-        //                     id: "whiteCollector",
-        //                     value: "White Collector",
-        //                     checked: false,
-        //                 },
-        //                 {
-        //                     id: "redCollector",
-        //                     value: "Red Collector",
-        //                     checked: false,
-        //                 }
-        //             ]
-        //         },
-        //         {
-        //             id: "currentCollector",
-        //             value: "Current Collector",
-        //             checked: false
-        //         },
-        //         {
-        //             id: "fansandfanimpellers",
-        //             value: "Fans and Fan Impellers",
-        //             checked: false
-        //         }
-        //     ]
         },
         {
             id: "electricequipment",
@@ -65,50 +21,25 @@ export default {
             checked: false
         },
         {
-            id: "electricalComponents",
+            id: "electricalcomponents",
             value: "Electrical components",
             checked: false
         },
         {
-            id: "factoryEquipment",
+            id: "factoryequipment",
             value: "Factory equipment",
             checked: false
         },
         {
-            id: "laserTech",
+            id: "lasertech",
             value: "Laser tech.",
             checked: false
         },
         {
-            id: "processAutomation",
+            id: "processautomation",
             value: "Process automation",
             checked: false
         },
-        // {
-        //     id: 9,
-        //     value: "Production engineering",
-        //     checked: false
-        // },
-        // {
-        //     id: 10,
-        //     value: "Robotics",
-        //     checked: false
-        // },
-        // {
-        //     id: 11,
-        //     value: "Sector-specific machines",
-        //     checked: false
-        // },
-        // {
-        //     id: 12,
-        //     value: "Sensors and actuators",
-        //     checked: false
-        // },
-        // {
-        //     id: 13,
-        //     value: "Other",
-        //     checked: false
-        // }
     ],
     categories: [
         {
@@ -138,19 +69,19 @@ export default {
     ],
     subProducts: [
         {
-            id: "blueCollector",
+            id: "bluecollector",
             value: "Blue Collector",
             checked: false,
             ownerCategory: "bearings"
         },
         {
-            id: "yellowCollector",
+            id: "yellowcollector",
             value: "Yellow Collector",
             checked: false,
             ownerCategory: "bearings"
         },
         {
-            id: "blackCollector",
+            id: "blackcollector",
             value: "Black Collector",
             checked: false,
             ownerCategory: "bearings"
@@ -162,7 +93,7 @@ export default {
             ownerCategory: "bearings"
         },
         {
-            id: "redCollector",
+            id: "redcollector",
             value: "Red Collector",
             checked: false,
             ownerCategory: "bearings"

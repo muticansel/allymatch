@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Modal, StyleSheet } from 'react-native';
-import { Button, Icon, Input, Item, Header, Body, Title } from 'native-base'
+import { Button, Icon, Input, Item } from 'native-base'
 
 const AddNew = props => {
     const [newThing, setNewThing] = useState('');

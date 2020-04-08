@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Button, Text, Icon } from 'native-base';
 
-import SubProducts from '../SubProducts';
-
 const DropdownButton = props => {
     const [btnClicked, setBtnClicked] = useState(false)
 
