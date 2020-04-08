@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Modal, StyleSheet } from 'react-native';
 import { Button, Icon, Input, Item, Header, Body, Title } from 'native-base'
 
-const NewProduct = props => {
+const AddNew = props => {
     const [newThing, setNewThing] = useState('');
 
     const addNewThing = () => {
@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default NewProduct
+export default AddNew

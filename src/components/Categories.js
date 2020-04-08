@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card, ListItem, Body, Text, CheckBox, Item, Input, Button, Icon } from 'native-base';
 
-import DroddownComp from './DropDownButton';
-import NewCategory from './NewProduct';
+import DroddownComp from './UI/DropDownButton';
+import NewCategory from './UI/AddNew';
 import * as actions from '../store/actions';
 
 const SubCategories = props => {

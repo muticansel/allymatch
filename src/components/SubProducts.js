@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card, ListItem, Body, Text, CheckBox, Item, Input, Button, Icon } from 'native-base';
 
 import * as actions from '../store/actions';
-import NewSubProduct from './NewProduct';
+import NewSubProduct from './UI/AddNew';
 
 const SubProducts = props => {
     const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const SubProducts = props => {
     return (
         <Card style={{ marginLeft: 10, marginRight: 10 }}>
             <NewSubProduct isVisible={modalVisible} addHandler={addSubProductHandler} placeholder="Sub Product Name" owner={props.category.id} />
-            <View key="searchBox" style={{ marginnLeft: 0, backgroundColor: props.color }}>
+            <View key="searchBox" style={styles.search, { backgroundColor: props.color }}>
                 <ListItem>
                     <Item rounded style={{ backgroundColor: 'white' }}>
                         <Input placeholder='Search' onChangeText={(val) => searchHandler(val)} />
@@ -62,5 +62,11 @@ const SubProducts = props => {
         </Card>
     )
 }
+
+const styles = StyleSheet.create({
+    search: {
+        marginLeft: 0
+    }
+})
 
 export default SubProducts

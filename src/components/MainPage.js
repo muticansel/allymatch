@@ -4,7 +4,7 @@ import { Container } from 'native-base';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import Products from './Products';
-import CustomHeaderButton from './CustomeHeaderButton';
+import CustomHeaderButton from './UI/CustomHeaderButton';
 
 const MainPage = props => {
     return (

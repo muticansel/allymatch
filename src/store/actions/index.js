@@ -6,6 +6,15 @@ export const ADD_NEW_PRODUCT = 'ADD_NEW_PRODUCT';
 export const ADD_NEW_CATEGORY = 'ADD_NEW_CATEGORY';
 export const ADD_NEW_SUBPRODUCT = 'ADD_NEW_SUBPRODUCT';
 
+export const RESET_ALL = 'RESET_ALL';
+
+export const reset = () => {
+    return async dispatch => {
+        dispatch({ type: RESET_ALL })
+
+    }
+}
+
 export const changeSelectedProduct = (productName, isRemove) => {
     return async dispatch => {
         dispatch({ type: CHANGE_SELECTED_PRODUCT, productName, isRemove })

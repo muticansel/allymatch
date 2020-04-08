@@ -9,6 +9,7 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
+    const updatedProducts = [...state.products];
     let updatedCategories = [...state.categories];
     let updatedSubProducts = [...state.subProducts];
 
@@ -70,7 +71,6 @@ const reducer = (state = initialState, action) => {
                 checked: false,
                 ownerProduct: action.owner
             }
-            console.log(newCategory)
             return {
                 ...state,
                 categories: state.categories.concat(newCategory)
@@ -85,6 +85,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 subProducts: state.subProducts.concat(newSubProduct)
+            }
+        case mainActions.RESET_ALL:
+            updatedProducts.forEach(prod => prod.checked = false);
+            updatedCategories.forEach(cat => cat.checked = false);
+            updatedSubProducts.forEach(subProd => subProd.checked = false);
+            return {
+                ...state,
+                products: updatedProducts,
+                categories: updatedCategories,
+                subProductName: updatedSubProducts
             }
         default:
             return state;

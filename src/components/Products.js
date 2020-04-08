@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, CheckBox, Body, ListItem, Content, Button, Icon, Modal, TouchableHighlight } from 'native-base';
 
-import DroddownComp from './DropDownButton';
-import NewProduct from './NewProduct';
+import DroddownComp from './UI/DropDownButton';
+import NewProduct from './UI/AddNew';
 import * as actions from '../store/actions';
 
 const Products = props => {
