@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card, ListItem, Body, Text, CheckBox, Item, Input, Button, Icon } from 'native-base';
 
+import SubProducts from './SubProducts';
 import DroddownComp from './UI/DropDownButton';
 import NewCategory from './UI/AddNew';
 import * as actions from '../store/actions';
@@ -58,7 +59,9 @@ const SubCategories = props => {
                                             category={category}
                                             bgColor="#D9F3F4"
                                             cardColor="#B3BEBF"
-                                            subProds />
+                                            subProds>
+                                            <SubProducts category={category} color="#B3BEBF" />
+                                        </DroddownComp>
                                     </View>
                                 }
                             </View>

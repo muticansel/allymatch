@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const CustomHeaderButton = props => {
     return (
-        <HeaderButton {...props}
+        <HeaderButton key="header" {...props}
             IconComponent={Ionicons}
             iconSize={22}
             color={ Platform.OS === 'android' ? '#06B6BE' : '#900C3F' } />

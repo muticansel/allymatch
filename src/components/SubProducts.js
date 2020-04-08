@@ -41,7 +41,7 @@ const SubProducts = props => {
             </View>
             {subProducts.length > 0 &&
                 <View style={{ backgroundColor: '#B3BEBF' }}>
-                    {subProducts.map((subProd, i) => {
+                    {subProducts.filter(subProd => search ? subProd.value.includes(search) : subProd.value).map((subProd, i) => {
                         return (
                             <View key={i}>
                                 <ListItem>

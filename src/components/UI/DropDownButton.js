@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Button, Text, Icon } from 'native-base';
 
-import SubCategories from '../Categories';
 import SubProducts from '../SubProducts';
 
 const DropdownButton = props => {
@@ -19,7 +18,7 @@ const DropdownButton = props => {
                     <Text>{props.text}</Text>
                     <Icon name={!btnClicked ? 'arrow-down' : 'arrow-up'} />
                 </Button>
-                {(btnClicked) && <SubProducts category={props.category} color={props.cardColor} />}
+                {(btnClicked) && props.children}
             </View>
         )
     }
@@ -31,7 +30,7 @@ const DropdownButton = props => {
                     <Text>{props.text}</Text>
                     <Icon name={!btnClicked ? 'arrow-down' : 'arrow-up'} />
                 </Button>
-                {(btnClicked) && <SubCategories product={props.product} color={props.cardColor} />}
+                {(btnClicked) && props.children}
             </View>
         )
     }

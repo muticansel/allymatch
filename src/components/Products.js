@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { Text, CheckBox, Body, ListItem, Content, Button, Icon, Modal, TouchableHighlight } from 'native-base';
+import { Text, CheckBox, Body, ListItem, Content, Button, Icon } from 'native-base';
 
+import SubCategories from './Categories';
 import DroddownComp from './UI/DropDownButton';
 import NewProduct from './UI/AddNew';
 import * as actions from '../store/actions';
@@ -22,7 +23,7 @@ const Products = props => {
 
     const addProductHandler = (val, productName) => {
         setModalVisible(val)
-        if(!val && productName)
+        if (!val && productName)
             dispatch(actions.addNewProduct(productName))
     }
 
@@ -40,7 +41,10 @@ const Products = props => {
                         </ListItem>
                         {product.checked &&
                             <View>
-                                <DroddownComp text="Select Sub Category" product={product} bgColor="#2B0775" cardColor={"#E2D9F4"} />
+                                <DroddownComp text="Select Sub Category" bgColor="#2B0775" cardColor={"#E2D9F4"}>
+                                    <SubCategories product={product} color={"#E2D9F4"} />
+                                </DroddownComp>
+                                {/* {(subCatBtn) && <SubCategories product={product} color={"#E2D9F4"} />} */}
                             </View>
                         }
                     </View>

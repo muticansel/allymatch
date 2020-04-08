@@ -4,7 +4,7 @@ import { Container } from 'native-base';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 import Products from './Products';
-import CustomHeaderButton from './UI/CustomHeaderButton';
+import CustomHeaderButton from './UI/HeaderButton';
 
 const MainPage = props => {
     return (
@@ -19,9 +19,7 @@ MainPage.navigationOptions = navData => {
         headerRight: () => (
             <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
                 <Item
-                    iconName={
-                        Platform.OS === 'android' ? 'md-checkmark' : 'ios-checkmark'
-                    }
+                    iconName={ Platform.OS === 'android' ? 'md-checkmark' : 'ios-checkmark' }
                     onPress={() => {
                         navData.navigation.navigate('Done')
                     }}
