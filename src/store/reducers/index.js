@@ -1,4 +1,4 @@
-import { CHANGE_SELECTED_PRODUCT, CHANGE_SELECTED_CATEGORY, CHANGE_SELECTED_SUBPRODUCT } from '../actions';
+import * as mainActions from '../actions';
 
 import dummyData from '../../../dummyData';
 
@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     let updatedSubProducts = [...state.subProducts];
 
     switch (action.type) {
-        case CHANGE_SELECTED_PRODUCT:
+        case mainActions.CHANGE_SELECTED_PRODUCT:
             let products = [...state.products];
             products.find(prod => prod.value === action.productName).checked = !action.isRemove;
             if (action.isRemove) {
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
                 categories: updatedCategories,
                 subProducts: updatedSubProducts
             }
-        case CHANGE_SELECTED_CATEGORY:
+        case mainActions.CHANGE_SELECTED_CATEGORY:
             updatedCategories.find(cat => cat.value === action.categoryName).checked = !action.isRemove;
             if (action.isRemove) {
                 updatedSubProducts
@@ -46,15 +46,45 @@ const reducer = (state = initialState, action) => {
                 categories: updatedCategories,
                 subProducts: updatedSubProducts
             }
-        case CHANGE_SELECTED_SUBPRODUCT:
+        case mainActions.CHANGE_SELECTED_SUBPRODUCT:
             updatedSubProducts.find(y => y.value === action.subProductName).checked = !action.isRemove;
 
             return {
                 ...state,
                 subProducts: updatedSubProducts
-                // selectedSubProducts: action.isRemove ?
-                //     state.selectedSubProducts.filter(subProd => subProd !== action.subProductName) :
-                //     state.selectedSubProducts.concat(action.subProductName)
+            }
+        case mainActions.ADD_NEW_PRODUCT:
+            const newProduct = {
+                id: action.productName.replace(" ", "").toLowerCase(),
+                value: action.productName,
+                checked: false
+            }
+            return {
+                ...state,
+                products: state.products.concat(newProduct)
+            }
+        case mainActions.ADD_NEW_CATEGORY:
+            const newCategory = {
+                id: action.categoryName.replace(" ", "").toLowerCase(),
+                value: action.categoryName,
+                checked: false,
+                ownerProduct: action.owner
+            }
+            console.log(newCategory)
+            return {
+                ...state,
+                categories: state.categories.concat(newCategory)
+            }
+        case mainActions.ADD_NEW_SUBPRODUCT:
+            const newSubProduct = {
+                id: action.subProductName.replace(" ", "").toLowerCase(),
+                value: action.subProductName,
+                checked: false,
+                ownerCategory: action.owner
+            }
+            return {
+                ...state,
+                subProducts: state.subProducts.concat(newSubProduct)
             }
         default:
             return state;

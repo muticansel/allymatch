@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { Text, CheckBox, Body, ListItem, Content } from 'native-base';
+import { Text, CheckBox, Body, ListItem, Content, Button, Icon, Modal, TouchableHighlight } from 'native-base';
 
 import DroddownComp from './DropDownButton';
+import NewProduct from './NewProduct';
 import * as actions from '../store/actions';
 
 const Products = props => {
     const dispatch = useDispatch();
     const products = useSelector(state => state.mainReducer.products);
+    const [modalVisible, setModalVisible] = useState(false)
 
     const productCheckedHandler = (product) => {
         let updatedProds = [...products];
@@ -18,8 +20,15 @@ const Products = props => {
         dispatch(actions.changeSelectedProduct(product.value, updatedProd.checked ? false : true))
     }
 
+    const addProductHandler = (val, productName) => {
+        setModalVisible(val)
+        if(!val && productName)
+            dispatch(actions.addNewProduct(productName))
+    }
+
     return (
         <Content>
+            <NewProduct isVisible={modalVisible} addHandler={addProductHandler} placeholder="Product Name" />
             {products.map((product, i) => {
                 return (
                     <View key={i}>
@@ -37,6 +46,10 @@ const Products = props => {
                     </View>
                 )
             })}
+            <Button style={{ justifyContent: 'center' }} onPress={() => addProductHandler(true)}>
+                <Text>Add Product</Text>
+                <Icon type="FontAwesome" name='plus' />
+            </Button>
         </Content>
     )
 }
